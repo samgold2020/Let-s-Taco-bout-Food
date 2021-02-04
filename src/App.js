@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
 
+//pages
+import IngredientCategory from './Components/IngredientCategory/index';
+
 function App() {
+  const [recipe, setRecipe] = useState('')
+  const [ingredient, setIngredient] = useState('')
+  const [searchString, setSearchString] = useState('chicken')
+  const [random, setRandom] = useState('')
+  const [searchID, setSearchID] =useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Sam
-        </a>
-      </header>
-    </div>
+    <>
+      <IngredientCategory  setSearchID={setSearchID} searchString={searchString} random={random} ingredient={ingredient} setIngredient={setIngredient}/>
+    </>
   );
 }
 
