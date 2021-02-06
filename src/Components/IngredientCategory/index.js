@@ -1,33 +1,29 @@
-import React, { useEffect } from 'react'
+import React from 'react';
+import '../../App.css';
+import { Link } from 'react-router-dom';
 
-const RecipeDetails = ({ ingredient, setIngredient, setSearchID, searchString, random }) => {
+const Ingredient = ({ ingredient, setIngredient, setSearchID, searchString, getMeals }) => {
 
-  const categoryAPI = `https://www.themealdb.com/api/json/v2/${process.env.REACT_APP_MEALS_API_KEY}/filter.php?i=${searchString}`
+if (!ingredient){
+  return null
+}
 
-  useEffect(() => {
-    
-    fetch(categoryAPI)
-    .then(res => res.json())
-    .then(res => {
-      setIngredient(res.meals)
-      console.log(res.meals)
-      })
-      .catch(err => {
-        console.error(err)
-    })
-}, []);
-
+console.log(ingredient)
   return (
-    <div>
+    <>
       <h1>Meal Options for Category</h1>
-      <h2>{ingredient[1].strMeal}</h2>
-      <p>{ingredient[1].idMeal}</p>
-      <img src={ingredient[1].strMealThumb} />
-      <h2>{ingredient[2].strMeal}</h2>
-      <h2>{ingredient[3].strMeal}</h2>
-      <h2>{ingredient[4].strMeal}</h2>
-    </div>
+      {ingredient.map((i) => {
+        return(
+          <>
+          <Link to={`/details/${i.idMeal}`} key={i.idMeal}>
+          <p >{i.strMeal}</p>
+          <img className="photo ingredient" src={i.strMealThumb} />
+          </Link>
+          </>
+        )
+      })}
+    </>
   )
 }
 
-export default RecipeDetails;
+export default Ingredient;
