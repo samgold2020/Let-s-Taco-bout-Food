@@ -53,10 +53,7 @@ if (!ingredient){
     <Route path='/details/:idMeal'  render={(routerProps)=> {
       return (
         <RecipeDetails 
-        match={routerProps.match}
-        ingredient={ingredient} 
-        setSearchID={setSearchID}
-        searchID={searchID}/>
+        match={routerProps.match}/>
       )
     }}
     />
