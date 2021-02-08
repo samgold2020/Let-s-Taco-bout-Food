@@ -23,17 +23,24 @@ console.log(ingredient)
             <button>Search by Ingredient</button>
         </form>
       </header> */}
+      <div className='navbar'></div>
       <h1>Meal Options for Category</h1>
+      <section className="container">
       {ingredient.map((i) => {
         return(
           <>
-          <Link to={`/details/${i.idMeal}`} key={i.idMeal}>
-          <p >{i.strMeal}</p>
-          <img className="photo ingredient" src={i.strMealThumb} alt='plated meal' />
-          </Link>
+          <div className="category">
+            <div className="card">
+            <Link to={`/details/${i.idMeal}`} key={i.idMeal}>
+            <img className="photo ingredient" src={i.strMealThumb} alt='plated meal' />
+            <p >{i.strMeal}</p>
+            </Link>
+            </div>
+          </div>
           </>
         )
       })}
+      </section>
     </>
   )
 }

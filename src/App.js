@@ -14,14 +14,13 @@ import Random from './Components/RandomRecipe/index';
 function App() {
   // const [recipe, setRecipe] = useState('')
   const [ingredient, setIngredient] = useState()
-  const [searchString, setSearchString] = useState('')
+  const [searchString, setSearchString] = useState('chicken')
   const [random, setRandom] = useState('')
   const [searchID, setSearchID] = useState('')
 
   const categoryAPI = `https://www.themealdb.com/api/json/v2/${process.env.REACT_APP_MEALS_API_KEY}/filter.php?i=${searchString}`
 
   useEffect(() => {
-
     fetch(categoryAPI)
     .then(res => res.json())
     .then(res => {
@@ -35,6 +34,25 @@ function App() {
 },[]);
 
 
+//fetch request inside a function so that it can be passed to the Homepage to render the search results.
+//Will need to find a better way of doing this as this causes a data refresh on every character passed in to the form? 
+const getRecipes = (event) => {
+  event.preventDefault()
+    fetch(categoryAPI)
+    .then(res => res.json())
+    .then (res => {
+        setIngredient(res.meals)
+        setSearchID(res.meals.idMeal)
+
+    })
+    .catch(err => {
+        console.error(err)
+    })
+  }
+
+
+console.log(ingredient)
+
 
 if (!ingredient){
   return <div>...loading</div>
@@ -46,7 +64,10 @@ if (!ingredient){
       {/* //To render only when the location matches, inside Homepage is the a Link to search imported from react-router-DOM.  */}
       <Route path='/' exact render={() => {
         return (
-          <Homepage />
+          <Homepage 
+          setSearchString={setSearchString} 
+          getRecipes={getRecipes}
+          />
         )
       }}
       />
@@ -59,7 +80,7 @@ if (!ingredient){
         )
       }}
       />
-      <Route path='/search-ingredients' render={() =>{
+      <Route path='/search-ingredients/:ingredient' render={(routerProps) =>{
         return (
           <Ingredientcategory 
           setSearchID={setSearchID} 
@@ -67,6 +88,7 @@ if (!ingredient){
           setSearchString={setSearchString} 
           ingredient={ingredient} 
           setIngredient={setIngredient}
+          match={routerProps.match}
         />
         ) 
       }}/>

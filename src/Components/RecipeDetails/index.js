@@ -17,6 +17,8 @@ const RecipeOptions = ( { match }) => {
         .then(res => res.json())
         .then (res => {
           setRecipe(res.meals[0])
+          console.log(res.meals)
+
         })
         .catch(err => {
             console.error(err)
@@ -26,7 +28,6 @@ const RecipeOptions = ( { match }) => {
     if (!recipe){
       return <div>...loading</div>
     }
-
     console.log("This is the full recipe", recipe)
   return (
     <>

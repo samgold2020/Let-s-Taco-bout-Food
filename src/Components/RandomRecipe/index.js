@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
 const RandomRecipe = ({ random, setRandom }) => {
+
   const randomAPI =`https://www.themealdb.com/api/json/v2/${process.env.REACT_APP_MEALS_API_KEY}/random.php`
 
   useEffect(() => {      
