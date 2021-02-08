@@ -3,8 +3,8 @@ import { Carousel } from 'react-responsive-carousel';
 
 const ImgCarousel = () => {
   return (
-    <div class='carousel-wrapper'>
-      <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs={false} dynamicHeight={false} height='100px'>
+    <div className='carousel-wrapper'>
+      <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs={false} dynamicHeight={true} height='100px'>
         <div>
             <img 
             src='../image-01.jpg' 

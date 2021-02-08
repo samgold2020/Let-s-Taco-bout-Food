@@ -95,6 +95,8 @@ li{
   text-decoration: underline;
   border-radius: 6px;
   padding-left: 20px;
+  color: black;
+  cursor: pointer;
 }
 
 .examples{
