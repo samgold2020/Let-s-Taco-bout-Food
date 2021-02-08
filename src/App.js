@@ -10,11 +10,12 @@ import Homepage from './Components/Homepage/index';
 import Ingredientcategory from './Components/IngredientCategory/index';
 import RecipeOptions from './Components/RecipeDetails/index';
 import Random from './Components/RandomRecipe/index';
+import Header from './Components/Header/index';
 
 function App() {
   // const [recipe, setRecipe] = useState('')
   const [ingredient, setIngredient] = useState()
-  const [searchString, setSearchString] = useState('chicken')
+  const [searchString, setSearchString] = useState('')
   const [random, setRandom] = useState('')
   const [searchID, setSearchID] = useState('')
 
@@ -42,8 +43,7 @@ const getRecipes = (event) => {
     .then(res => res.json())
     .then (res => {
         setIngredient(res.meals)
-        setSearchID(res.meals.idMeal)
-
+        // setSearchID(res.meals.idMeal)
     })
     .catch(err => {
         console.error(err)
@@ -53,7 +53,6 @@ const getRecipes = (event) => {
 
 console.log(ingredient)
 
-
 if (!ingredient){
   return <div>...loading</div>
 }
@@ -61,6 +60,7 @@ if (!ingredient){
   return (
     <>
     <Router>
+      <Header />
       {/* //To render only when the location matches, inside Homepage is the a Link to search imported from react-router-DOM.  */}
       <Route path='/' exact render={() => {
         return (
@@ -71,7 +71,7 @@ if (!ingredient){
         )
       }}
       />
-      <Route path='/random' exact render={() => {
+      <Route path='/random' render={() => {
         return (
           <Random 
           random={random}
@@ -80,7 +80,7 @@ if (!ingredient){
         )
       }}
       />
-      <Route path='/search-ingredients/:ingredient' render={(routerProps) =>{
+      <Route path='/search-ingredients/' render={() =>{
         return (
           <Ingredientcategory 
           setSearchID={setSearchID} 
@@ -88,7 +88,6 @@ if (!ingredient){
           setSearchString={setSearchString} 
           ingredient={ingredient} 
           setIngredient={setIngredient}
-          match={routerProps.match}
         />
         ) 
       }}/>

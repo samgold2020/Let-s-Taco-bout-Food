@@ -3,35 +3,144 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ /*Start of Recipe Search Results*/
 .photo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
 }
+
+/* p{ */
+  /* padding-top: 30px; */
+  /* background-color: green; */
+  /* height: 60px; */
+  /* overflow: hidden; */
+/* } */
+ /*End of Recipe Search Results*/
 
 .container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(250px);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: minmax(350px);
   grid-gap: 1rem;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 1rem;
+  /* margin: 0 auto; */
+  /* max-width: 1200px; */
+  padding: 5rem;
 } 
 
-/* //how to have one a component render another /Navbar render */
-.navbar{
-  height: 60px;
-  background-color: lightblue;
-}
 .category{
-  border: 5px solid blue;
-
-
+  /* border: 5px solid blue; */
+  border: 5px solid green;
+  border-radius: 15px;
+  /* width: 300px; */
+  height: 300px;
 }
 
 .card{
+text-align: center;  
+/* border: 5px solid green; */
+padding: 1rem;
+}
 
-  border: 5px solid green;
+/* Navbar styling */
+.nav {
+  /* display: flex; */
+  height: 60px;
+  background-color: green;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+/* align-items: center; */
+}
+.nav-list {
+  padding-top: 15px;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+li{
+  list-style: none;
+}
+/*Start of Homepage Component*/
+
+.directions {
+  /* z-index: 10; */
+  position: relative;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.directions-list{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 2;
+  font-size: 36px;
+  color: white;
+  background-color: green;
+  padding: 30px;
+}
+
+.search{
+  text-decoration: underline;
+  border-radius: 6px;
+  padding-left: 20px;
+}
+
+.examples{
+  text-indent: 100px;
+  font-size: 24px;
+}
+
+form input {
+  font-size: 24px;
+}
+/*End of Homepage Component*/
+
+
+
+/*Start of Random Ingredients*/
+.random-wrapper{
+  display: grid;
+  grid-template-columns: 550px auto;
+  /* border: 3px solid red; */
+  text-align: center;
+  padding: 3rem;
 
 }
+
+.random-ingredients{
+  border-style: double;
+  padding: 30px 20px 20px 20px;
+  font-size: 18px;
+}
+
+.random-img{
+  border-radius: 15px;
+  /* padding: 20px 0 20px 20px; */
+  /* border-radius: 100px; */
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  padding-top: 20px;
+}
+/*End of Random Ingredients*/
+
+/*Start Carousel Styling*/
+/* .carousel{
+ height: 1100px;
+} */
+
+/*End Carousel Styling*/

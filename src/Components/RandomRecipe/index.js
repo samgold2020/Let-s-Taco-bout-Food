@@ -16,26 +16,24 @@ const RandomRecipe = ({ random, setRandom }) => {
       })
   }, []);
 
-  
-  //function to handle page reload if "new random recipe clicked"
-  function reloadWindow () {
-    window.location.reload(false);
-  }
-
   if (!random){
     return <div>...loading</div>
   }
 
   return (
       <section>
-        <button onClick={reloadWindow}>Get a new random recipe</button>
-       <div className="details-container">
-          <img className="card-back"
-          src={random.strMealThumb}
+           <h2>{random.strMeal} - {random.strArea}</h2>
+       <div className='random-wrapper'>
+          <img 
+          className='random-img'
+          width='500px'
+          height='500px'
+          src={random.strMealThumb} 
           alt={random.strMeal}/>
-      <div className="details">
-          <p>{random.strMeal} - {random.strArea}</p>
-          <ul className="ingredient-details">
+      <div className='random-ingredients'>
+          <ul><b>Ingredient List:</b>
+          <br></br>
+          <br></br>
               <li>{random.strMeasure1} {random.strIngredient1}</li>
               <li>{random.strMeasure2} {random.strIngredient2}</li>
               <li>{random.strMeasure3} {random.strIngredient3}</li>
@@ -49,10 +47,12 @@ const RandomRecipe = ({ random, setRandom }) => {
               <li>{random.strMeasure11} {random.strIngredient11}</li>
               <li>{random.strMeasure12} {random.strIngredient12}</li>
               <br></br>
-              <li><b>Instructions</b> {random.strInstructions}</li>
           </ul>
+              <p><b>Instructions:</b> {random.strInstructions}</p>
       </div>
       </div>
+      <div>
+              </div>
        </section>
   );
 };
