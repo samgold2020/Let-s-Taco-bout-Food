@@ -87,8 +87,9 @@ li{
   z-index: 2;
   font-size: 36px;
   color: white;
-  background-color: green;
+  background-color: #347E00;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .search{

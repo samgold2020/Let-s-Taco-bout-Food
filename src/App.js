@@ -10,7 +10,10 @@ import Homepage from './Components/Homepage/index';
 import Ingredientcategory from './Components/IngredientCategory/index';
 import RecipeOptions from './Components/RecipeDetails/index';
 import Random from './Components/RandomRecipe/index';
-import Header from './Components/Header/index';
+import Header from './Components/Navbar/index';
+// import NoIngredient from './Components/NoIngredient';
+// import NoIngredient from './Components/NoIngredient';
+
 
 function App() {
   // const [recipe, setRecipe] = useState('')
@@ -50,11 +53,11 @@ const getRecipes = (event) => {
     })
   }
 
-
 console.log(ingredient)
 
 if (!ingredient){
   return <div>...loading</div>
+  // return <NoIngredient />
 }
 
   return (
