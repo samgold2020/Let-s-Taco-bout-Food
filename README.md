@@ -11,4 +11,5 @@ Notes for Tuesday:
 
 How to display key-value pairs from JSON in react: https://www.pluralsight.com/guides/how-to-display-key-and-value-pairs-from-json-in-reactjs
 
-There is a category within the details that names the ingredient, consider using that to fetch recipes! Would need to change API request from category to meal details API but definitely do-able and just render name and image on cards page
+There is a category within the details that names the ingredient, consider using that to fetch recipes! Would need to change API request from category to meal details API but definitely do-able and just render name and image on cards page\
+Test test test test readme Test
