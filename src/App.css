@@ -45,8 +45,9 @@ padding: 1rem;
 /* Navbar styling */
 .nav {
   /* display: flex; */
-  height: 60px;
-  background-color: green;
+  height: 70px;
+  background-color: #F7DDBD;
+  font-family: 'Alfa Slab One', cursive;
   /* justify-content: center; */
   /* align-items: center; */
   /* justify-content: space-between; */

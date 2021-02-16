@@ -1,12 +1,8 @@
 // import { Carousel } from 'bootstrap';
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ImgCarousel from '../Carousel/index';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { render } from '@testing-library/react';
-import NoIngredient from '../NoIngredient';
-
-
 
 const Homepage = ({ searchString, setSearchString, getRecipes }) => {
 
