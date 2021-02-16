@@ -45,8 +45,9 @@ padding: 1rem;
 /* Navbar styling */
 .nav {
   /* display: flex; */
-  height: 60px;
-  background-color: green;
+  height: 70px;
+  background-color: #F7DDBD;
+  font-family: 'Alfa Slab One', cursive;
   /* justify-content: center; */
   /* align-items: center; */
   /* justify-content: space-between; */
@@ -87,8 +88,9 @@ li{
   z-index: 2;
   font-size: 36px;
   color: white;
-  background-color: green;
+  background-color: #347E00;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .search{

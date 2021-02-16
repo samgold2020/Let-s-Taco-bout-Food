@@ -1,10 +1,8 @@
 // import { Carousel } from 'bootstrap';
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ImgCarousel from '../Carousel/index';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-
 
 const Homepage = ({ searchString, setSearchString, getRecipes }) => {
 
@@ -31,7 +29,7 @@ const Homepage = ({ searchString, setSearchString, getRecipes }) => {
     <form onClick={getRecipes} className='form'>
       <label>Search by Ingredient:
         <br></br>
-        <input type='text' name='ingredient' value={searchString} onChange={handleChange}/>
+        <input type='text' name='ingredient' defaultValue='Example: chicken, beef' value={searchString} onChange={handleChange}/>
       </label>
       <input  type='submit' value='Submit'/>
       <Link to='/search-ingredients' className='search'>See Recipes</Link>
