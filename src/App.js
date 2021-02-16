@@ -70,6 +70,7 @@ if (!ingredient){
           <Homepage 
           setSearchString={setSearchString} 
           getRecipes={getRecipes}
+          searchID={searchID}
           />
         )
       }}
